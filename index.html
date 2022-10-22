@@ -1,33 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Konstantin Bylbas">
 
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/KonstantinBylbas/light_start/master/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/KonstantinBylbas/light_start/master/favicon.ico"
+        type="image/x-icon">
     <link rel="stylesheet" href="./assets/style.css">
 
     <title>Konstantin Bylbas</title>
 </head>
+
 <body>
-    <main>
-        <section>
-            <input type="file">
-        </section>
-        
-        <section>
+    <main class="container">
+        <section id="task1">
+            <h2>
+                Завдання №1
+            </h2>
 
+            <div class="row">
+                <div>
+                    <p>з: </p>
+                    <div class="select">
+                        <span>Оберіть величину</span>
+                        <div class="list"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <p>в: </p>
+                    <div class="select">
+                        <span>Оберіть величину</span>
+                        <div class="list"></div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="row">
+                <input type="text" placeholder="Введіть значення для конвертації...">
+                <input type="submit" value="Конвертувати">
+            </form>
+
+            <form class="row" id="addRule">
+                <input type="text" name="rule" placeholder="Введіть правило...">
+                <input type="submit" value="Завантажити">
+            </form>
         </section>
 
         <section>
-
+            <h2>
+                Завдання №2
+            </h2>
         </section>
 
         <section>
-            
+            <h2>
+                Завдання №3
+            </h2>
         </section>
+
+        <section>
+            <h2>
+                Завдання №4
+            </h2>
+        </section>
+
+        <!-- <div class="arrow" data-scroll="-"></div> -->
+        <!-- <div class="arrow" data-scroll="+"></div> -->
+        <div class="toast"></div>
     </main>
 </body>
-</html> 
+
+<!-- <script defer src="./services/scroll.js"></script> -->
+<script src="./services/input.js"></script>
+<script src="./services//addRule.js"></script>
+<script src="./services/select.js"></script>
+
+</html>

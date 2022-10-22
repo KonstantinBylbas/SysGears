@@ -2,10 +2,12 @@
 
 $dark: #252525;
 $light: #eee;
+$primary: #bc6ff1;
 
 *,
 *::before,
-*::after {
+*::after,
+*::placeholder {
   color: $light;
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -32,42 +34,21 @@ p {
 
 h1 {
   font-size: 5rem;
-  @media only screen and(max-width: 1200px) {
-    font-size: 3.5rem;
-  }
-  @media only screen and(max-width: 768px) {
-    font-size: 2rem;
-  }
 }
 h2 {
   font-size: 3.5rem;
-  @media only screen and(max-width: 768px) {
-    font-size: 1.7rem;
-  }
 }
 h3 {
   font-size: 2.5rem;
-  @media only screen and(max-width: 768px) {
-    font-size: 1.5rem;
-  }
 }
 h4 {
   font-size: 2rem;
-  @media only screen and(max-width: 768px) {
-    font-size: 1.5rem;
-  }
 }
 h5 {
   font-size: 1.5rem;
-  @media only screen and(max-width: 768px) {
-    font-size: 1.2rem;
-  }
 }
 h6 {
   font-size: 1.2rem;
-  @media only screen and(max-width: 768px) {
-    font-size: 1rem;
-  }
 }
 p,
 a,
@@ -77,15 +58,21 @@ label,
 input,
 button {
   font-size: 1rem;
-  @media only screen and(max-width: 768px) {
-    font-size: 0.8rem;
-  }
 }
 
-body{
-    width: 100%;
-    overflow-x: hidden; 
-    background-color: $dark;
+body {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: $dark;
+
+  section {
+    height: 100vh;
+
+    h2 {
+      text-align: center;
+      margin: 20px 0;
+    }
+  }
 }
 
 .container {
@@ -96,7 +83,6 @@ body{
   }
 }
 
-//******************flex******************
 .row {
   display: flex;
 }
@@ -106,19 +92,208 @@ body{
   flex-direction: column;
 }
 
-//******************custom scrollBar******************
+input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  &[type="submit"] {
+    border-radius: 5px;
+    background-color: $primary;
+  }
+}
+
+.select,
+.list,
+input {
+  width: 300px;
+  border: solid 2px $primary;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.select,
+input {
+  padding: 10px 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+input:hover,
+.select:hover,
+.select:hover .list,
+.select.open,
+.select.open .list,
+input:focus {
+  box-shadow: 4px 4px 4px $primary;
+}
+
+.select {
+  position: relative;
+
+  &::after {
+    content: "";
+    padding: 3px;
+    position: absolute;
+    right: 15px;
+    border: solid $primary;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+  &.open {
+    .list {
+      max-height: 300px;
+      top: calc(100% + 2px);
+      z-index: 1;
+    }
+  }
+
+  .list {
+    max-height: 0;
+    position: absolute;
+    top: 100%;
+    left: -2px;
+    background-color: $dark;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: none;
+    overflow: hidden;
+
+    p {
+      width: 100% !important;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: rgba($color: $primary, $alpha: 0.3);
+      }
+    }
+  }
+}
+
+#task1 {
+  .row {
+    margin: 10px 0;
+    align-items: center;
+    justify-content: space-between;
+
+    & > div{
+      display: flex;
+      align-items: center;
+    }
+
+    input{
+      &[type='text']{
+        width: calc(100% - 300px - 10px);
+      }
+    }
+  }
+
+  p {
+    width: 50px;
+  }
+}
+
+.toast {
+  min-width: 250px;
+  max-width: 350px;
+  padding: 20px;
+  border-radius: 35px;
+  position: fixed;
+  right: 3rem;
+  bottom: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 100;
+
+  &.show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.error{
+    color: $light;
+    background-image: linear-gradient(-35deg, rgb(177, 17, 17) 0, rgb(248, 72, 72) 100%);
+  }
+
+  &.success{
+    color: $light;
+    background-image: linear-gradient(-35deg, rgb(0, 123, 43) 0, rgb(26, 162, 49)100%);
+  }
+}
+
+
+// .arrow {
+//   width: 32px;
+//   height: 32px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   position: fixed;
+//   left: 32px;
+//   bottom: 70px;
+//   background-color: lightgray;
+//   border-radius: 50%;
+//   transition: 0.3s;
+//   cursor: pointer;
+//   z-index: 10;
+
+//   &.disabled {
+//     cursor: default !important;
+
+//     &:hover {
+//       background-color: lightgray;
+
+//       &::after {
+//         border-color: $primary;
+//       }
+//     }
+//   }
+
+//   &:hover {
+//     background-color: $primary;
+
+//     &::after {
+//       border-color: $light;
+//     }
+//   }
+
+//   &::after {
+//     content: "";
+//     border: solid $primary;
+//     border-width: 0 3px 3px 0;
+//     display: inline-block;
+//     padding: 3px;
+//     transform: rotate(-135deg);
+//     -webkit-transform: rotate(-135deg);
+//   }
+// }
+
+// [data-scroll="+"] {
+//   bottom: 32px;
+
+//   &::after {
+//     transform: rotate(45deg);
+//   }
+// }
+
 ::-webkit-scrollbar {
   width: 0.8rem;
   height: 0.8rem;
   background-color: $light;
 
-  /* ползунок скроллбара */
   &-thumb {
     border-radius: 0.2rem;
   }
 }
 
-/* Стрелки */
 ::-webkit-scrollbar-button:vertical:start:decrement {
   background: linear-gradient(120deg, $light 40%, rgba(0, 0, 0, 0) 41%),
     linear-gradient(240deg, $light 40%, rgba(0, 0, 0, 0) 41%), linear-gradient(0deg, $light 30%, rgba(0, 0, 0, 0) 31%);
@@ -149,59 +324,4 @@ body{
   &:hover {
     background-color: $dark;
   }
-}
-
-//******************hide browser input buttons******************
-//******number******
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
-//******************custom checkbox******************
-input[type="checkbox"] {
-  padding: 0;
-  height: initial;
-  width: initial;
-  margin-bottom: 0;
-  display: none;
-  cursor: pointer;
-
-  & + label {
-    position: relative;
-    cursor: pointer;
-
-    &::before {
-      content: "";
-      margin: 0.5rem 0;
-      -webkit-appearance: none;
-      background-color: transparent;
-      border: 2px solid #0079bf;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
-      padding: 10px;
-      display: inline-block;
-      position: relative;
-      vertical-align: middle;
-      cursor: pointer;
-      margin-right: 5px;
-    }
-  }
-}
-
-input:checked + label:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 2px;
-  left: 9px;
-  width: 6px;
-  height: 14px;
-  border: solid #0079bf;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
 }
