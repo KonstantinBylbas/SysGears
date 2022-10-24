@@ -21,26 +21,8 @@
                 Завдання №1
             </h2>
 
-            <div class="row">
-                <div>
-                    <p>з: </p>
-                    <div class="select">
-                        <span>Оберіть величину</span>
-                        <div class="list"></div>
-                    </div>
-                </div>
-
-                <div>
-                    <p>в: </p>
-                    <div class="select">
-                        <span>Оберіть величину</span>
-                        <div class="list"></div>
-                    </div>
-                </div>
-            </div>
-
-            <form class="row">
-                <input type="text" placeholder="Введіть значення для конвертації...">
+            <form class="row" id="convert">
+                <input type="text" name="data" placeholder="Введіть значення для конвертації...">
                 <input type="submit" value="Конвертувати">
             </form>
 
@@ -50,10 +32,15 @@
             </form>
         </section>
 
-        <section>
+        <section id="task2">
             <h2>
                 Завдання №2
             </h2>
+
+            <form class="row" id="sort">
+                <textarea name="data" placeholder="Введіть список даних та умову..."></textarea>
+                <input type="submit" value="Сортувати">
+            </form>
         </section>
 
         <section>
@@ -68,15 +55,14 @@
             </h2>
         </section>
 
-        <!-- <div class="arrow" data-scroll="-"></div> -->
-        <!-- <div class="arrow" data-scroll="+"></div> -->
-        <div class="toast"></div>
+        <div id="toast" class=""></div>
     </main>
 </body>
 
-<!-- <script defer src="./services/scroll.js"></script> -->
 <script src="./services/input.js"></script>
 <script src="./services//addRule.js"></script>
-<script src="./services/select.js"></script>
+<script src="./services/converting.js"></script>
+<script src="./services/sort.js"></script>
+<script src="./services/showToast.js"></script>
 
 </html>

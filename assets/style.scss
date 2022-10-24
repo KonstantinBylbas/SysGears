@@ -9,6 +9,7 @@ $primary: #bc6ff1;
 *::after,
 *::placeholder {
   color: $light;
+  letter-spacing: 1.5px;
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: "Montserrat", sans-serif;
@@ -92,7 +93,14 @@ body {
   flex-direction: column;
 }
 
-input {
+textarea {
+  min-height: 120px;
+  max-height: 250px;
+  resize: vertical;
+}
+
+input,
+textarea {
   background-color: transparent;
   border: none;
   outline: none;
@@ -105,26 +113,35 @@ input {
 
 .select,
 .list,
-input {
+input,
+textarea {
   width: 300px;
   border: solid 2px $primary;
   cursor: pointer;
+}
+
+.select,
+.list,
+input {
   transition: 0.2s;
 }
 
 .select,
-input {
+input,
+textarea {
   padding: 10px 15px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
 input:hover,
+textarea:hover,
 .select:hover,
 .select:hover .list,
 .select.open,
 .select.open .list,
-input:focus {
+input:focus,
+textarea:focus {
   box-shadow: 4px 4px 4px $primary;
 }
 
@@ -175,34 +192,25 @@ input:focus {
   }
 }
 
-#task1 {
+#task1,
+#task2 {
   .row {
     margin: 10px 0;
     align-items: center;
     justify-content: space-between;
 
-    & > div{
-      display: flex;
-      align-items: center;
+    input[type="text"],
+    textarea {
+      width: calc(100% - 300px - 10px);
     }
-
-    input{
-      &[type='text']{
-        width: calc(100% - 300px - 10px);
-      }
-    }
-  }
-
-  p {
-    width: 50px;
   }
 }
 
-.toast {
+#toast {
   min-width: 250px;
-  max-width: 350px;
+  max-width: 400px;
   padding: 20px;
-  border-radius: 35px;
+  border-radius: 5px;
   position: fixed;
   right: 3rem;
   bottom: 2rem;
@@ -218,71 +226,16 @@ input:focus {
     opacity: 1;
   }
 
-  &.error{
+  &.error {
     color: $light;
     background-image: linear-gradient(-35deg, rgb(177, 17, 17) 0, rgb(248, 72, 72) 100%);
   }
 
-  &.success{
+  &.success {
     color: $light;
-    background-image: linear-gradient(-35deg, rgb(0, 123, 43) 0, rgb(26, 162, 49)100%);
+    background-image: linear-gradient(-35deg, rgb(0, 123, 43) 0, rgb(26, 162, 49) 100%);
   }
 }
-
-
-// .arrow {
-//   width: 32px;
-//   height: 32px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   position: fixed;
-//   left: 32px;
-//   bottom: 70px;
-//   background-color: lightgray;
-//   border-radius: 50%;
-//   transition: 0.3s;
-//   cursor: pointer;
-//   z-index: 10;
-
-//   &.disabled {
-//     cursor: default !important;
-
-//     &:hover {
-//       background-color: lightgray;
-
-//       &::after {
-//         border-color: $primary;
-//       }
-//     }
-//   }
-
-//   &:hover {
-//     background-color: $primary;
-
-//     &::after {
-//       border-color: $light;
-//     }
-//   }
-
-//   &::after {
-//     content: "";
-//     border: solid $primary;
-//     border-width: 0 3px 3px 0;
-//     display: inline-block;
-//     padding: 3px;
-//     transform: rotate(-135deg);
-//     -webkit-transform: rotate(-135deg);
-//   }
-// }
-
-// [data-scroll="+"] {
-//   bottom: 32px;
-
-//   &::after {
-//     transform: rotate(45deg);
-//   }
-// }
 
 ::-webkit-scrollbar {
   width: 0.8rem;

@@ -4,6 +4,7 @@
 *::after,
 *::placeholder {
   color: #eee;
+  letter-spacing: 1.5px;
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-family: "Montserrat", sans-serif;
@@ -93,38 +94,55 @@ body section h2 {
   flex-direction: column;
 }
 
-input {
+textarea {
+  min-height: 120px;
+  max-height: 250px;
+  resize: vertical;
+}
+
+input,
+textarea {
   background-color: transparent;
   border: none;
   outline: none;
 }
-input[type=submit] {
+input[type=submit],
+textarea[type=submit] {
   border-radius: 5px;
   background-color: #bc6ff1;
 }
 
 .select,
 .list,
-input {
+input,
+textarea {
   width: 300px;
   border: solid 2px #bc6ff1;
   cursor: pointer;
+}
+
+.select,
+.list,
+input {
   transition: 0.2s;
 }
 
 .select,
-input {
+input,
+textarea {
   padding: 10px 15px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
 input:hover,
+textarea:hover,
 .select:hover,
 .select:hover .list,
 .select.open,
 .select.open .list,
-input:focus {
+input:focus,
+textarea:focus {
   box-shadow: 4px 4px 4px #bc6ff1;
 }
 
@@ -168,27 +186,24 @@ input:focus {
   background-color: rgba(188, 111, 241, 0.3);
 }
 
-#task1 .row {
+#task1 .row,
+#task2 .row {
   margin: 10px 0;
   align-items: center;
   justify-content: space-between;
 }
-#task1 .row > div {
-  display: flex;
-  align-items: center;
-}
-#task1 .row input[type=text] {
+#task1 .row input[type=text],
+#task1 .row textarea,
+#task2 .row input[type=text],
+#task2 .row textarea {
   width: calc(100% - 300px - 10px);
 }
-#task1 p {
-  width: 50px;
-}
 
-.toast {
+#toast {
   min-width: 250px;
-  max-width: 350px;
+  max-width: 400px;
   padding: 20px;
-  border-radius: 35px;
+  border-radius: 5px;
   position: fixed;
   right: 3rem;
   bottom: 2rem;
@@ -199,15 +214,15 @@ input:focus {
   transition: 0.3s;
   z-index: 100;
 }
-.toast.show {
+#toast.show {
   visibility: visible;
   opacity: 1;
 }
-.toast.error {
+#toast.error {
   color: #eee;
   background-image: linear-gradient(-35deg, rgb(177, 17, 17) 0, rgb(248, 72, 72) 100%);
 }
-.toast.success {
+#toast.success {
   color: #eee;
   background-image: linear-gradient(-35deg, rgb(0, 123, 43) 0, rgb(26, 162, 49) 100%);
 }
