@@ -146,50 +146,17 @@ textarea:focus {
   box-shadow: 4px 4px 4px #bc6ff1;
 }
 
-.select {
-  position: relative;
+#task1 .row {
+  align-items: center;
 }
-.select::after {
-  content: "";
-  padding: 3px;
-  position: absolute;
-  right: 15px;
-  border: solid #bc6ff1;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-}
-.select.open .list {
-  max-height: 300px;
-  top: calc(100% + 2px);
-  z-index: 1;
-}
-.select .list {
-  max-height: 0;
-  position: absolute;
-  top: 100%;
-  left: -2px;
-  background-color: #252525;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-top: none;
-  overflow: hidden;
-}
-.select .list p {
-  width: 100% !important;
-  padding: 10px 15px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.select .list p:hover {
-  background-color: rgba(188, 111, 241, 0.3);
+
+#task2 .row {
+  align-items: flex-start;
 }
 
 #task1 .row,
 #task2 .row {
   margin: 10px 0;
-  align-items: center;
   justify-content: space-between;
 }
 #task1 .row input[type=text],
@@ -201,7 +168,7 @@ textarea:focus {
 
 #toast {
   min-width: 250px;
-  max-width: 400px;
+  max-width: 650px;
   padding: 20px;
   border-radius: 5px;
   position: fixed;
@@ -264,7 +231,7 @@ textarea:focus {
 ::-webkit-scrollbar-button:vertical:start:decrement:hover,
 ::-webkit-scrollbar-button:horizontal:start:decrement:hover,
 ::-webkit-scrollbar-button:horizontal:end:increment:hover {
-  background-color: #252525;
+  background-color: #bc6ff1;
 }
 
 /*# sourceMappingURL=style.css.map */

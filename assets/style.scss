@@ -145,50 +145,62 @@ textarea:focus {
   box-shadow: 4px 4px 4px $primary;
 }
 
-.select {
-  position: relative;
+// .select {
+//   position: relative;
 
-  &::after {
-    content: "";
-    padding: 3px;
-    position: absolute;
-    right: 15px;
-    border: solid $primary;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
+//   &::after {
+//     content: "";
+//     padding: 3px;
+//     position: absolute;
+//     right: 15px;
+//     border: solid $primary;
+//     border-width: 0 3px 3px 0;
+//     display: inline-block;
+//     transform: rotate(45deg);
+//     -webkit-transform: rotate(45deg);
+//   }
+
+//   &.open {
+//     .list {
+//       max-height: 300px;
+//       top: calc(100% + 2px);
+//       z-index: 1;
+//     }
+//   }
+
+//   .list {
+//     max-height: 0;
+//     position: absolute;
+//     top: 100%;
+//     left: -2px;
+//     background-color: $dark;
+//     border-bottom-left-radius: 5px;
+//     border-bottom-right-radius: 5px;
+//     border-top: none;
+//     overflow: hidden;
+
+//     p {
+//       width: 100% !important;
+//       padding: 10px 15px;
+//       cursor: pointer;
+//       transition: 0.3s;
+
+//       &:hover {
+//         background-color: rgba($color: $primary, $alpha: 0.3);
+//       }
+//     }
+//   }
+// }
+
+#task1 {
+  .row {
+    align-items: center;
   }
+}
 
-  &.open {
-    .list {
-      max-height: 300px;
-      top: calc(100% + 2px);
-      z-index: 1;
-    }
-  }
-
-  .list {
-    max-height: 0;
-    position: absolute;
-    top: 100%;
-    left: -2px;
-    background-color: $dark;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-top: none;
-    overflow: hidden;
-
-    p {
-      width: 100% !important;
-      padding: 10px 15px;
-      cursor: pointer;
-      transition: 0.3s;
-
-      &:hover {
-        background-color: rgba($color: $primary, $alpha: 0.3);
-      }
-    }
+#task2 {
+  .row {
+    align-items: flex-start;
   }
 }
 
@@ -196,7 +208,6 @@ textarea:focus {
 #task2 {
   .row {
     margin: 10px 0;
-    align-items: center;
     justify-content: space-between;
 
     input[type="text"],
@@ -208,7 +219,7 @@ textarea:focus {
 
 #toast {
   min-width: 250px;
-  max-width: 400px;
+  max-width: 650px;
   padding: 20px;
   border-radius: 5px;
   position: fixed;
@@ -275,6 +286,6 @@ textarea:focus {
   background-color: grey;
 
   &:hover {
-    background-color: $dark;
+    background-color: $primary;
   }
 }

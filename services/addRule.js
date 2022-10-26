@@ -9,14 +9,6 @@ const defaultRules = [
 
 localStorage.setItem('defaultRules', JSON.stringify(defaultRules));
 
-document.querySelectorAll('.list').forEach(list => {
-    defaultRules.map(rule => {
-        let tmp = document.createElement('p');
-        tmp.innerText = rule.unit;
-        list.append(tmp);
-    })
-})
-
 addRule.onsubmit = (event) => {
     event.preventDefault();
 
