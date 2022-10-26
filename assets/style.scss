@@ -198,14 +198,16 @@ textarea:focus {
   }
 }
 
-#task2 {
+#task2,
+#task4 {
   .row {
     align-items: flex-start;
   }
 }
 
 #task1,
-#task2 {
+#task2,
+#task4 {
   .row {
     margin: 10px 0;
     justify-content: space-between;

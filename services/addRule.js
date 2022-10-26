@@ -1,4 +1,4 @@
-const rule = /^({"unit":")([a-z]{1,3})(","cmIn":)([0-9].{0,5})(})/;
+const rulesPattern = /^({"unit":")([a-z]{1,3})(","cmIn":)([0-9].{0,5})(})/;
 
 const defaultRules = [
     { unit: 'm', cmIn: 100 },
@@ -13,7 +13,7 @@ addRule.onsubmit = (event) => {
     event.preventDefault();
 
     const form = event.target;
-    if (form.rule.value.match(rule) !== null) {
+    if (form.rule.value.match(rulesPattern) !== null) {
         defaultRules.push(JSON.parse(form.rule.value))
         localStorage.setItem('defaultRules', JSON.stringify(defaultRules));
         showToast('success', 'Нове правило успішно додано!');

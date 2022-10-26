@@ -150,19 +150,23 @@ textarea:focus {
   align-items: center;
 }
 
-#task2 .row {
+#task2 .row,
+#task4 .row {
   align-items: flex-start;
 }
 
 #task1 .row,
-#task2 .row {
+#task2 .row,
+#task4 .row {
   margin: 10px 0;
   justify-content: space-between;
 }
 #task1 .row input[type=text],
 #task1 .row textarea,
 #task2 .row input[type=text],
-#task2 .row textarea {
+#task2 .row textarea,
+#task4 .row input[type=text],
+#task4 .row textarea {
   width: calc(100% - 300px - 10px);
 }
 
