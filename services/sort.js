@@ -14,7 +14,7 @@ sort.onsubmit = (event) => {
                 operations(_condition, Object.values(condition)[i]);
         });
 
-        showToast('success', `Результат:\n ${JSON.stringify(result)}`);
+        showToast('success', `Завдання №2. Результат:\n ${JSON.stringify(result)}`);
     }
     else
         showToast('error', 'Помилка!\nВведені дані не відповідають формату {"data":[{"user":"name@mail.com","rating":20,"disabled":true},{"user":"123www@outlook","rating":37,"disabled":false}],"condition":{"exclude":{"rating":20,"disabled":false},"sort_by":["rating"]}}');

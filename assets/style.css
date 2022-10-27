@@ -10,56 +10,9 @@
   font-family: "Montserrat", sans-serif;
 }
 
-a,
-a:visited,
-a:active {
-  color: inherit;
-  text-decoration: none;
-}
-
 body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
-}
-
-h1 {
-  font-size: 5rem;
-}
-
 h2 {
-  font-size: 3.5rem;
-}
-
-h3 {
-  font-size: 2.5rem;
-}
-
-h4 {
-  font-size: 2rem;
-}
-
-h5 {
-  font-size: 1.5rem;
-}
-
-h6 {
-  font-size: 1.2rem;
-}
-
-p,
-a,
-td,
-li,
-label,
-input,
-button {
-  font-size: 1rem;
+  margin: 0;
 }
 
 body {
@@ -71,8 +24,9 @@ body section {
   height: 100vh;
 }
 body section h2 {
-  text-align: center;
   margin: 20px 0;
+  text-align: center;
+  font-size: 3.5rem;
 }
 
 .container {
@@ -111,8 +65,12 @@ textarea[type=submit] {
   border-radius: 5px;
   background-color: #bc6ff1;
 }
+input:hover, input:focus,
+textarea:hover,
+textarea:focus {
+  box-shadow: 4px 4px 4px #bc6ff1;
+}
 
-.select,
 .list,
 input,
 textarea {
@@ -121,29 +79,16 @@ textarea {
   cursor: pointer;
 }
 
-.select,
 .list,
 input {
   transition: 0.2s;
 }
 
-.select,
 input,
 textarea {
   padding: 10px 15px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-}
-
-input:hover,
-textarea:hover,
-.select:hover,
-.select:hover .list,
-.select.open,
-.select.open .list,
-input:focus,
-textarea:focus {
-  box-shadow: 4px 4px 4px #bc6ff1;
 }
 
 #task1 .row {
