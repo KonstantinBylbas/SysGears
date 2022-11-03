@@ -16,7 +16,7 @@ $primary: #bc6ff1;
 }
 
 body,
-h2{
+h2 {
   margin: 0;
 }
 
@@ -33,13 +33,18 @@ body {
       text-align: center;
       font-size: 3.5rem;
     }
+
+    p:last-of-type {
+      margin: 10px 0 100px 0;
+    }
   }
 }
 
 .container {
   width: 1100px;
   margin: auto;
-  @media only screen and(max-width: 1200px) {
+
+  @media only screen and (max-width: 1200px) {
     width: 95%;
   }
 }

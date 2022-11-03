@@ -20,6 +20,14 @@
             <h2>
                 Завдання №1
             </h2>
+            <p>
+                Приклад даних для конвертації:<br/>
+                {"distance":{"unit":"m","value":0.5},"convert_to":"ft"}
+            </p>
+            <p>
+                Приклад правила:<br/>
+                {"unit":"f","cmIn":8}
+            </p>
 
             <form class="row" id="convert">
                 <input type="text" name="data" placeholder="Введіть значення для конвертації...">
@@ -36,6 +44,10 @@
             <h2>
                 Завдання №2
             </h2>
+            <p>
+                Приклад даних та умови:<br/>
+                {"data":[{"user":"1qw@mail","rating":20,"disabled":true},{"user":"058qw@mail","rating":20,"disabled":false},{"user":"q345wer@test.com","rating":5,"disabled":true},{"user":"qwerty@test.com","rating":100,"disabled":true},{"user":"name321@test.com","rating":50,"disabled":true},{"user":"123www@outlook","rating":37,"disabled":false}],"condition":{"exclude":{"rating":20,"disabled":false},"sort_by":["rating"]}}
+            </p>
 
             <form class="row" id="sort">
                 <textarea name="data" placeholder="Введіть список даних та умову..."></textarea>
@@ -47,6 +59,10 @@
             <h2>
                 Завдання №4
             </h2>
+            <p>
+                Приклад питань та умови:<br/>
+                [{"id":0,"question":"What is your marital status?","answers":["Single","Married"],"nextQuestionsId":[1,2]},{"id":1,"question":"Are you planning on getting married next year?","answers":["Yes","No"],"nextQuestionsId":[]},{"id":2,"question":"How long have you been married?","answers":["Less than a year","More than a year"],"nextQuestionsId":[0,3]},{"id":3,"question":"Have you celebrated your one year anniversary?","answers":["Yes","No"],"nextQuestionsId":[]}]
+            </p>
 
             <form class="row" id="questions">
                 <textarea name="data" placeholder="Введіть список питань та умови..."></textarea>

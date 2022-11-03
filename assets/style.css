@@ -28,6 +28,9 @@ body section h2 {
   text-align: center;
   font-size: 3.5rem;
 }
+body section p:last-of-type {
+  margin: 10px 0 100px 0;
+}
 
 .container {
   width: 1100px;
